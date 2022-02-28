@@ -69,7 +69,7 @@ async function updateGist(stats) {
         ]
             .map((content) => {
                 let line = `${content[1]}:${content[2]}`;
-                line = line.replace(':', ':' + ' '.repeat(25 - line.length));
+                line = line.replace(':', ':' + ' '.repeat(35 - line.length));
                 line = `${content[0]}    ${line}`;
                 return line;
             })
@@ -89,7 +89,7 @@ async function updateGist(stats) {
     return request('PATCH /gists/:gist_id', {
         files: {
             [filename]: {
-                filename: `${stats.name}'s GitHub Stats`,
+                filename: `My GitHub Stats`,
                 content: gistContent,
             },
         },
